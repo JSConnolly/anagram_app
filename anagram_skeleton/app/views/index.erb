@@ -9,6 +9,7 @@
     text-align: left;
   }
 </style>
+<h1>Matthew and J's Anagram Checker</h1>
 
 <div class="container">
 
@@ -17,9 +18,12 @@
     <br>
     <input type="submit" name="Anagram me!">
   </form>
+  <div id="anagrams"></div>
+<div>
   <% if @anagrams %>
   <% @anagrams.each do |word| %>
     <%= word %>
   <% end %>
   <% end %>
 </div>
+

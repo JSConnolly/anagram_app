@@ -6,7 +6,7 @@ get '/' do
   end
 end
 
-get '/:term' do
+post '/check_term' do
   @anagrams = []
   @term = params[:term]
 
@@ -16,8 +16,8 @@ get '/:term' do
   terms.each do |term|
     @anagrams << term.name unless term.name == @term
   end
-  \
-  erb :index
+  @anagrams.uniq!
+  @anagrams.join(" ")
 end
 
 # Sinatra's get, post, put, etc. URL helpers match against the shape/form of a URL.
